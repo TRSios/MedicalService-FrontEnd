@@ -1,0 +1,14 @@
+.mat-form-field {
+  font-family: "HelveticaNeueLT Std Thin";
+  font-size: 100%;
+  width: 25%;
+}
+
+.with-icon {
+  align-items: center;
+  display: flex;
+}
+
+.mat-icon {
+  cursor: pointer;
+}

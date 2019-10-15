@@ -1,1 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "HelveticaNeueLT Std Thin";
+  src: url("fonts/Neue Helvetica® Std 35 Thin.otf");
+}

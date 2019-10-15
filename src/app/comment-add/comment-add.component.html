@@ -1,0 +1,26 @@
+<mat-card>
+  <form #commentForm="ngForm" (ngSubmit)="save(commentForm.value)">
+    <mat-card-content>
+      <input type="hidden" name="href" [(ngModel)]="comment.href">
+      <mat-form-field>
+        <input matInput placeholder="Date" [(ngModel)]="comment.date" required name="date" #comment.date>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput placeholder="Comment" [(ngModel)]="comment.comment" required name="comment" #comment.comment>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput placeholder="Patient ID" [(ngModel)]="comment.patientId" required name="patientId" #comment.patientId>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <div class="with-icon">
+        <button mat-raised-button type="submit" [disabled]="!commentForm.valid">
+          <mat-icon svgIcon="save" aria-hidden="false"></mat-icon>
+        </button>
+        <mat-icon svgIcon="cancel" aria-hidden="false" [routerLink]="['/patient-details', patientId]"></mat-icon>
+      </div>
+    </mat-card-actions>
+  </form>
+</mat-card>

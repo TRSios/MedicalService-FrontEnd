@@ -1,0 +1,16 @@
+<mat-card>
+  <mat-form-field class="mat-form-field-search">
+    <mat-icon svgIcon="search" aria-label="false" matPrefix></mat-icon>
+    <input matInput [(ngModel)]="searchTerm">
+    <mat-icon svgIcon="clear" aria-hidden="false" *ngIf="searchTerm" (click)="searchTerm = ''" matSuffix></mat-icon>
+  </mat-form-field>
+  <mat-icon svgIcon="person-add" aria-hidden="false" [routerLink]="['/patient-add']"></mat-icon>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item class="mat-list-item-patient" *ngFor="let patient of patients | patientFilter: searchTerm">
+        <mat-icon svgIcon="person" aria-hidden="false" [routerLink]="['/patient-details', patient.id]"></mat-icon>
+        <a [routerLink]="['/patient-details', patient.id]">{{ patient.firstName }} {{ patient.lastName }}</a>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

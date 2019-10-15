@@ -1,0 +1,27 @@
+<mat-card style="height: 27rem">
+  <div class="col-sm-12">
+    <span>{{ patient.firstName }} {{ patient.lastName }}</span>
+  </div>
+  <div class="col-sm-6" style="text-align: right; font-weight: bold">
+    <span>Date Of Birth:</span><br>
+    <span>Sex:</span><br>
+    <span>Country:</span><br>
+    <span>State:</span><br>
+    <span>Address:</span>
+  </div>
+  <div class="col-sm-6" style="text-align: left">
+    <span>{{ patient.dateOfBirth }}</span><br>
+    <span>{{ patient.sex }}</span><br>
+    <span>{{ patient.country }}</span><br>
+    <span>{{ patient.state }}</span><br>
+    <span>{{ patient.address }}</span>
+  </div>
+  <div class="col-sm-12">
+    <mat-icon svgIcon="edit" aria-hidden="false" [routerLink]="['/patient-edit', patientId]"></mat-icon>
+    <mat-icon svgIcon="delete" aria-hidden="false" (click)="remove(patient.href)" *ngIf="patient.href"></mat-icon>
+    <mat-icon svgIcon="cancel" aria-hidden="false" routerLink="/patient-list"></mat-icon>
+    <mat-icon></mat-icon>
+    <mat-icon svgIcon="add-comment" aria-hidden="false" [routerLink]="['/comment-add', patientId]"></mat-icon>
+    <mat-icon svgIcon="mode-comment" aria-hidden="false" [routerLink]="['/comment-list', patientId]"></mat-icon>
+  </div>
+</mat-card>

@@ -1,0 +1,14 @@
+.col-sm-12 {
+  font-family: "HelveticaNeueLT Std Thin";
+  font-size: 250%;
+  text-align: center;
+}
+
+.col-sm-6 {
+  font-family: "HelveticaNeueLT Std Thin";
+  font-size: 150%;
+}
+
+.mat-icon {
+  cursor: pointer;
+}

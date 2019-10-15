@@ -1,0 +1,13 @@
+<mat-card style="height: 100rem">
+  <div class="col-sm-6" style="text-align: right; font-weight: bold">
+    <span>{{ comment.date }}</span><br>
+  </div>
+  <div class="col-sm-6" style="text-align: left">
+    <span>{{ comment.comment }}</span><br>
+  </div>
+  <div class="col-sm-12">
+    <mat-icon svgIcon="edit" aria-hidden="false" [routerLink]="['/comment-edit', patientId]"></mat-icon>
+    <mat-icon svgIcon="delete" aria-hidden="false" (click)="remove(comment.href)" *ngIf="comment.href"></mat-icon>
+    <mat-icon svgIcon="cancel" aria-hidden="false" [routerLink]="['/comment-list', comment.patientId]"></mat-icon>
+  </div>
+</mat-card>
